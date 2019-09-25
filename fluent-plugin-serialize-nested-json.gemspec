@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ysh@live.in"]
   spec.description   = %q{Parser plugin that serializes nested JSON attributes}
   spec.summary       = %q{Parser plugin that serializes nested JSON attributes}
-  spec.homepage      = "https://github.com/alikhil/fluent-plugin-serialize-nested-json"
+  spec.homepage      = "https://github.com/ysh7/fluent-plugin-serialize-nested-json"
   spec.license       = "BSD"
 
   spec.files         = `git ls-files`.split($/)

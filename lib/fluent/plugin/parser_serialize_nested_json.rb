@@ -4,7 +4,7 @@ require 'yajl'
 module Fluent
   module Plugin
     class SerializeJSONParser < Parser
-      Plugin.register_parser('serialze_nested_json', self)
+      Plugin.register_parser('serialize_nested_json', self)
 
       config_set_default :time_key, 'time'
       config_set_default :time_type, :float
