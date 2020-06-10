@@ -6,6 +6,7 @@ module Fluent
     class SerializeJSONParser < Parser
       Plugin.register_parser('serialize_nested_json', self)
 
+      config_param :stringify_num, :bool, default: "false"   # strinfify_num is configurable with "false" as default
       config_set_default :time_key, 'time'
       config_set_default :time_type, :float
 
@@ -29,6 +30,13 @@ module Fluent
               record.delete k
             rescue Exception => e
               # continue
+            end
+          end
+          if v.is_a?(Numeric) && @strinfify_num == true
+            begin
+              values[k] = v.to_s
+              record.delete k
+            rescue Exception => e
             end
           end
         end
