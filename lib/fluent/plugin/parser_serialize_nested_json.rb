@@ -7,6 +7,7 @@ module Fluent
       Plugin.register_parser('serialize_nested_json', self)
 
       config_param :stringify_num, :bool, default: "false"   # strinfify_num is configurable with "false" as default
+      config_param :exclude, :array, default: [], value_type: :string
       config_set_default :time_key, 'time'
       config_set_default :time_type, :float
 
@@ -24,6 +25,8 @@ module Fluent
         values = Hash.new
 
         record.each do |k, v|
+          next if @exclude.include?(k.to_s)
+
           if v.is_a?(Hash) || v.is_a?(Array)
             begin
               values[k] = Yajl::Encoder.encode(v)
