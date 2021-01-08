@@ -1,7 +1,7 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
   spec.name          = "fluent-plugin-serialize-nested-json"
-  spec.version       = "0.0.3"
+  spec.version       = "0.0.4"
   spec.authors       = ["Yagnesh Mistry"]
   spec.email         = ["ysh@live.in"]
   spec.description   = %q{Parser plugin that serializes nested JSON attributes}
